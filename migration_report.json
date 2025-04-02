@@ -1,0 +1,7 @@
+{
+  "error": {
+    "errorCode": "CONFIGURATION",
+    "message": "Unable to connect to the database. Configure the url, user and password!",
+    "stackTrace": null
+  }
+}

@@ -1,0 +1,17 @@
+- name: Run Flyway Migrations Only
+  hosts: localhost
+  gather_facts: false
+  vars:
+    db_name: testdb
+    db_user: root
+    db_password: root
+
+  tasks:
+    - name: Run Flyway migration
+      shell: |
+        ./flyway-bin/flyway \
+        -url="jdbc:mysql://localhost:3306/{{ db_name }}?allowPublicKeyRetrieval=true&useSSL=false" \
+        -user={{ db_user }} \
+        -password={{ db_password }} \
+        -locations=filesystem:flyway/sql \
+        migrate
